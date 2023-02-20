@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3% 20% 2%;
+    /* flex-wrap: wrap; */
+}
+
+div.logo img {
+    width: 200px;
+}
+
+ul.header-links {
+    display: flex;
+    list-style: none;
+    gap: 18px;
+}
+
+.header-links a {
+    text-decoration: none;
+    color: #495e57;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Karla', sans-serif;
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 4% 20% 0;
+    gap: 150px;
+    align-items: center;
+    background-color: #495e57;
+    font-family: 'Markazi Text', serif;
+}
+
+.side {
+    flex: 1;
+}
+
+.header-section .left h1 {
+    color: #f4ce14;
+    font-size: 55px;
+    font-weight: 600;
+    line-height: 0.5;
+}
+
+.header-section .left h3 {
+    color: #edefee;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.header-section .left p {
+    color: #edefee;
+    font-size: 17px;
+    margin-top: 10px;
+    line-height: 1.5;
+    font-family: 'Karla', sans-serif;
+}
+
+.header-section .left button {
+    color: #495e57;
+    background: #f4ce14;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 13px 0 30px;
+    font-size: 17px;
+    font-weight: 400;
+    font-family: 'Karla', sans-serif;
+}
+
+.header-section .right {
+    display: flex;
+    justify-content: right;
+}
+
+div.right img {
+    width: 270px;
+    height: 300px;
+    border-radius: 10px;
+    position: absolute;
+    top: 160px;
+}
