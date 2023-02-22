@@ -6,6 +6,8 @@
     padding: 0;
 }
 
+/* Header Section */
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -15,12 +17,13 @@ nav {
 }
 
 div.logo img {
-    width: 200px;
+    width: 170px;
 }
 
 ul.header-links {
     display: flex;
     list-style: none;
+    align-items: center;
     gap: 18px;
 }
 
@@ -30,6 +33,18 @@ ul.header-links {
     font-size: 18px;
     font-weight: 500;
     font-family: 'Karla', sans-serif;
+}
+
+.header-links .onlineOrder a {
+    color: #edefee;
+    background: #495e57;
+    border-radius: 12px;
+    padding: 4px 12px;
+    font-size: 17px;
+}
+
+.header-links img {
+    width: 25px;
 }
 
 .header-section {
@@ -76,6 +91,7 @@ ul.header-links {
     margin: 13px 0 30px;
     font-size: 17px;
     font-weight: 400;
+    cursor: pointer;
     font-family: 'Karla', sans-serif;
 }
 
@@ -90,4 +106,84 @@ div.right img {
     border-radius: 10px;
     position: absolute;
     top: 160px;
+}
+
+/* Main Section */
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7% 22% 3%;
+}
+
+.main-header h2 {
+    color: #333;
+    font-size: 50px;
+    font-weight: 600;
+    font-family: 'Markazi Text', serif;
+}
+
+.main-header button {
+    color: #495e57;
+    background: #f4ce14;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Karla', sans-serif;
+}
+
+.card-wrapper {
+    display: flex;
+    padding: 0 20% 5%;
+    gap: 30px;
+}
+
+.card {
+    background: #edefee;
+    border-radius: 10px 10px 0 0;
+    width: fit-content;
+}
+
+.card img {
+    width: 270px;
+    height: 180px;
+    border-radius: 10px 10px 0 0;
+}
+
+.card .img-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.img-label .dish {
+    color: #333;
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.img-label .price {
+    color: #f4ce14;
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.card > p {
+    padding: 10px 25px;
+    color: #333;
+    font-family: 'Karla', sans-serif;
+}
+
+.order-delivery p {
+    font-family: 'Karla', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 40px 25px 25px;
+    cursor: pointer;
 }

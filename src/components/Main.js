@@ -8,17 +8,17 @@ const Main = () => {
                 <h2> This week's specials! </h2>
                 <button> Online Menu </button>
             </div>
-            <section>
+            <section className="card-wrapper">
                 <div className="card">
-                    <img src="" alt="Greek Salad" />
+                    <img src="images/greek-salad.jpg" alt="Greek Salad" />
                     <div className="img-label">
-                        <p> Greek Salad </p>
-                        <p> $12.99 </p>
+                        <p className="dish"> Greek Salad </p>
+                        <p className="price"> $12.99 </p>
                     </div>
                     <p>
                         The famous Greek salad of crispy lettuce, peppers 
                         olives and our Chicago style feta cheese garnished 
-                        with crunchy garlic and rosemary croutons.
+                        with crunchy garlic and rosemary.
                     </p>
                     <div className="order-delivery">
                         <p> Order a delivery </p>
@@ -26,10 +26,10 @@ const Main = () => {
                 </div>
 
                 <div className="card">
-                    <img src="" alt="Bruchetta" />
+                    <img src="images/bruchetta.svg" alt="Bruchetta" />
                     <div className="img-label">
-                        <p> Bruchetta </p>
-                        <p> $5.99 </p>
+                        <p className="dish"> Bruchetta </p>
+                        <p className="price"> $5.99 </p>
                     </div>
                     <p>
                         Our Bruchetta is made from grilled bread that 
@@ -42,15 +42,15 @@ const Main = () => {
                 </div>
 
                 <div className="card">
-                    <img src="" alt="Lemon Dessert" />
+                    <img src="images/lemon-dessert.jpg" alt="Lemon Dessert" />
                     <div className="img-label">
-                        <p> Lemon Dessert </p>
-                        <p> $7.49 </p>
+                        <p className="dish"> Lemon Dessert </p>
+                        <p className="price"> $7.49 </p>
                     </div>
                     <p>
                         This comes straight from grandma's recipe book. 
                         Every ingredient has been sourced and is as authentic 
-                        as cn be imagined.
+                        as can be imagined.
                     </p>
                     <div className="order-delivery">
                         <p> Order a delivery </p>
@@ -58,7 +58,7 @@ const Main = () => {
                 </div>
             </section>
 
-            <Reviews />
+            {/* <Reviews /> */}
         </main>
     )
 }
