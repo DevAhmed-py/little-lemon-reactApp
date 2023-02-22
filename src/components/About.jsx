@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Header";
 import Footer from './Footer';
 
-const Homepage = () => {
+const About = () => {
     return (
         <>
             <Header />
@@ -12,4 +12,4 @@ const Homepage = () => {
     )
 }
 
-export default Homepage;
+export default About;
