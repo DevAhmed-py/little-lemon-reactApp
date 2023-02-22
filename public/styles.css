@@ -12,7 +12,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3% 20% 2%;
+    padding: 2% 20% 2%;
     /* flex-wrap: wrap; */
 }
 
@@ -20,7 +20,7 @@ div.logo img {
     width: 170px;
 }
 
-ul.header-links {
+.header-links {
     display: flex;
     list-style: none;
     align-items: center;
@@ -35,7 +35,7 @@ ul.header-links {
     font-family: 'Karla', sans-serif;
 }
 
-.header-links .onlineOrder a {
+a.onlineOrder {
     color: #edefee;
     background: #495e57;
     border-radius: 12px;
@@ -140,6 +140,7 @@ div.right img {
     display: flex;
     padding: 0 20% 5%;
     gap: 30px;
+    justify-content: center;
 }
 
 .card {
@@ -186,4 +187,17 @@ div.right img {
     font-weight: 600;
     padding: 40px 25px 25px;
     cursor: pointer;
+}
+
+footer {
+    background: #495e57;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #68867c;
 }
