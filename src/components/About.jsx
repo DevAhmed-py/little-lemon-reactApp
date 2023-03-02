@@ -4,11 +4,10 @@ import Footer from './Footer';
 
 const About = () => {
     return (
-        <>
+        <div style= {{display: 'grid', gridTemplateRows: '1fr', height: '100vh'}}>
             <Header />
-            <div style= {{height: "35.4vh"}} />
             <Footer />
-        </>
+        </div>
     )
 }
 

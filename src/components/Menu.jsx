@@ -5,11 +5,11 @@ import Nav from "./Nav";
 
 const Menu = () => {
     return (
-        <>
+        <div style= {{display: 'grid', gridTemplateRows: '1fr', height: '100vh'}}>
             <Nav />
             <Main  />
             <Footer />
-        </>
+        </div>
     )
 }
 

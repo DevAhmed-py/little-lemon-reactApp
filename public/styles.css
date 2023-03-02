@@ -189,6 +189,36 @@ div.right img {
     cursor: pointer;
 }
 
+/* Reservation Form */
+
+form label {
+    font-family: 'Markazi Text', serif;
+    font-size: 25px;
+    text-align: center;
+    margin: 5px 0 -20px;
+}
+
+form .formStyle {
+    padding: 5px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 17px;
+    font-family: 'Karla', sans-serif;
+}
+
+form button {
+    max-width: fit-content;
+    margin: 30px auto;
+    color: #495e57;
+    background: #f4ce14;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
 /* Footer Section */
 
 footer {

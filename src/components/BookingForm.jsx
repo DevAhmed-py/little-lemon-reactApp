@@ -2,11 +2,18 @@ import React from "react";
 
 const BookingForm = () => {
     return (
-        <form style={{ display: 'grid', maxWidth: '200px', padding: '20px 0'}}>
+        <form style=
+            {{ display: 'grid', 
+            background: '#edefee', 
+            width: '400px', 
+            height: '500px', 
+            margin: '0 auto', 
+            padding: '5px 10px' }}
+            >
             <label for="res-date"> Choose date </label>
-            <input type="date" id="res-date" />
+            <input className="formStyle" type="date" id="res-date" />
             <label for="res-time">Choose time</label>
-            <select id="res-time ">
+            <select className="formStyle" id="res-time ">
                 <option>17:00</option>
                 <option>18:00</option>
                 <option>19:00</option>
@@ -15,13 +22,13 @@ const BookingForm = () => {
                 <option>22:00</option>
             </select>
             <label for="guests">Number of guests</label>
-            <input type="number" placeholder="1" min="1" max="10" id="guests" />
+            <input className="formStyle" type="number" placeholder="1" min="1" max="10" id="guests" />
             <label for="occasion">Occasion</label>
-            <select id="occasion">
+            <select className="formStyle" id="occasion">
                 <option>Birthday</option>
                 <option>Anniversary</option>
             </select>
-            <input type="submit" value="Make Your reservation" />
+            <button type="submit"> Make Your reservation </button>
         </form>
     )
 }
