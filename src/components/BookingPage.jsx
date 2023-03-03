@@ -5,7 +5,11 @@ import Footer from "./Footer";
 
 const BookingPage = () => {
     return (
-        <div style={{display: 'grid', gridTemplateRows: 'auto 1fr auto', height: '100vh'}}>
+        <div style=
+            {{ display: 'grid', 
+            gridTemplateRows: 'auto 1fr auto', 
+            height: '100vh' }}
+            >
             <Nav />
             <BookingForm />
             <Footer />

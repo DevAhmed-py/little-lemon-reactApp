@@ -12,7 +12,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2% 20% 2%;
+    padding: 2% 15% 2%;
     /* flex-wrap: wrap; */
 }
 
@@ -50,7 +50,7 @@ a.onlineOrder {
 .header-section {
     display: flex;
     justify-content: space-between;
-    padding: 4% 20% 0;
+    padding: 4% 15% 0;
     gap: 150px;
     align-items: center;
     background-color: #495e57;
@@ -114,7 +114,7 @@ div.right img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 7% 22% 3%;
+    padding: 7% 16% 3%;
 }
 
 .main-header h2 {
@@ -138,7 +138,7 @@ div.right img {
 
 .card-wrapper {
     display: flex;
-    padding: 0 20% 5%;
+    padding: 0 15% 5%;
     gap: 30px;
     justify-content: center;
 }
