@@ -2,19 +2,21 @@ import React, { useState } from "react";
 
 const BookingForm = () => {
     const [date, setDate] = useState("")
-    const [time, setTime] = useState("")
+    const [availableTimes, setAvailableTimes] = useState(
+        '')
+    // ['17:00','18:00','19:00','20:00','21:00','22:00']
     const [guests, setGuests] = useState("")
     const [occasion, setOccasion] = useState("")
     
     const formValid = () => {
         return (
-            date && time && guests && occasion
+            date && availableTimes && guests && occasion
         );
     }
 
     const clearField = () => {
         setDate('');
-        setTime('');
+        setAvailableTimes('');
         setGuests('');
         setOccasion('');
     }
@@ -41,9 +43,10 @@ const BookingForm = () => {
             />
             <label htmlFor="res-time"> Choose time </label>
             <select className="formStyle" id="res-time " 
-                value= {time}
-                onChange= {e => setTime(e.target.value)}
+                value= {availableTimes}
+                onChange= {e => setAvailableTimes(e.target.value)}
             >
+                {/* {availableTimes.map(time => <option> {time} </option>)} */}
                 <option>17:00</option>
                 <option>18:00</option>
                 <option>19:00</option>
