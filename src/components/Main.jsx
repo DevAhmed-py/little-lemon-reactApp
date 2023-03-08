@@ -1,7 +1,12 @@
 import React from "react";
+import BookingForm from "./BookingForm";
 import Reviews from "./Reviews";
 
 const Main = () => {
+
+    const [availableTimes, setAvailableTimes] = useState(
+        ['17:00','18:00','19:00','20:00','21:00','22:00'])
+        
     return (
         <main>
             <div className="main-header">
@@ -58,6 +63,7 @@ const Main = () => {
                 </div>
             </section>
 
+            <BookingForm />
             {/* <Reviews /> */}
         </main>
     )
