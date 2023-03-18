@@ -1,31 +1,20 @@
 import React, { useState } from "react";
 
-const BookingForm = ({availableTimes}) => {
+
+
+const BookingForm = ({times, submitHandler}) => {
+
     const [date, setDate] = useState("")
-    // const [availableTimes, setAvailableTimes] = useState(
-    //     ['17:00','18:00','19:00','20:00','21:00','22:00'])
-    // ['17:00','18:00','19:00','20:00','21:00','22:00']
     const [guests, setGuests] = useState("")
     const [occasion, setOccasion] = useState("")
-    
-    const formValid = () => {
-        return (
-            date && availableTimes && guests && occasion
-        );
+    const [selectedTime, setSelectedTime] = useState("")
+
+
+    const handleSelectChange = (e) => {
+        setSelectedTime(e.target.value)
     }
 
-    const clearField = () => {
-        setDate('');
-        setAvailableTimes('');
-        setGuests('');
-        setOccasion('');
-    }
     
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        alert('Reservation made')
-        clearField()
-    }
 
     return (
 
@@ -38,7 +27,7 @@ const BookingForm = ({availableTimes}) => {
                 color: '#333'
             }}
             > Book a Table </h2>
-            <form onSubmit={handleSubmit}
+            <form onSubmit={submitHandler}
                 style= {{ display: 'grid', 
                 background: '#edefee', 
                 width: '400px', 
@@ -54,16 +43,9 @@ const BookingForm = ({availableTimes}) => {
                 />
                 <label htmlFor="res-time"> Choose time </label>
                 <select className="formStyle" id="res-time " 
-                    value= {availableTimes}
-                    onChange= {e => setAvailableTimes(e.target.value)}
+                    onChange= {handleSelectChange}
                 >
-                    {availableTimes.map(time => <option> {time} </option>)}
-                    {/* <option>17:00</option>
-                    <option>18:00</option>
-                    <option>19:00</option>
-                    <option>20:00</option>
-                    <option>21:00</option>
-                    <option>22:00</option> */}
+                    {times && times.map(time => <option value={time} key={time}> {time} </option>)}
                 </select>
                 <label htmlFor="guests"> Number of guests </label>
                 <input className="formStyle" type="number" placeholder="1" 
@@ -80,7 +62,7 @@ const BookingForm = ({availableTimes}) => {
                     <option value= 'anniversary'> Anniversary </option>
                     <option value= 'no_occasion'> No occassion </option>
                 </select>
-                <button disabled= {!formValid()} type="submit"> Make Your reservation </button>
+                <button type="submit"> Make Your reservation </button>
             </form>
         </>
     )

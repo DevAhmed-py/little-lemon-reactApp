@@ -1,12 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import BookingForm from "./BookingForm";
 import Reviews from "./Reviews";
 
+
+
+
 const Main = () => {
 
-    const [availableTimes, setAvailableTimes] = useState(
-        ['17:00','18:00','19:00','20:00','21:00','22:00'])
-        
+
+    
+    const [availableTimes, setAvailableTimes] = useState(['17:00','18:00','19:00','20:00','21:00','22:00']);
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        alert('Reservation made')
+        // clearField()
+    }
+    // const formValid = () => {
+    //     return (
+    //         date && availableTimes && guests && occasion
+    //     );
+    // }
+
+    // const clearField = () => {
+    //     setDate('');
+    //     setAvailableTimes('');
+    //     setGuests('');
+    //     setOccasion('');
+    // }
+
+
     return (
         <main>
             <div className="main-header">
@@ -39,7 +62,7 @@ const Main = () => {
                     <p>
                         Our Bruchetta is made from grilled bread that 
                         has been smeared from garllic and seasoned with 
-                        salt and olive oil.
+                        sea salt and olive oil.
                     </p>
                     <div className="order-delivery">
                         <p> Order a delivery </p>
@@ -63,7 +86,10 @@ const Main = () => {
                 </div>
             </section>
 
-            <BookingForm />
+            <BookingForm 
+                times = {availableTimes}
+                submitHandler = {handleSubmit}
+            />
             {/* <Reviews /> */}
         </main>
     )
