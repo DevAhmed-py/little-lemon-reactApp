@@ -10,6 +10,7 @@ const BookingPage = () => {
             gridTemplateRows: 'auto 1fr auto', 
             height: '100vh' }}
             >
+                <div >bla bla</div>
             <Nav />
             <BookingForm />
             <Footer />
