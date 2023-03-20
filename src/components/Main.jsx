@@ -1,11 +1,26 @@
-import React from "react";
+import React, {useReducer, useState} from "react";
 import BookingForm from "./BookingForm";
 import Reviews from "./Reviews";
 
+const TIMES = ['17:00','18:00','19:00','20:00','21:00','22:00']
+
 const Main = () => {
 
-    const [availableTimes, setAvailableTimes] = useState(
-        ['17:00','18:00','19:00','20:00','21:00','22:00'])
+    // const [state, dispatch] = useReducer( updateTimes, initializeTimes )
+
+    const [availableTimes, setAvailableTimes] = useState(undefined)
+
+    const handleSelectChange = (e) => {
+        setAvailableTimes(e.target.value)
+    }
+
+    // const updateTimes = (state, action) => {
+
+    // }
+
+    // const initializeTimes = () => {
+        
+    // }
         
     return (
         <main>
@@ -63,7 +78,10 @@ const Main = () => {
                 </div>
             </section>
 
-            <BookingForm />
+            <BookingForm 
+                times = {TIMES}
+                onChange = {handleSelectChange}
+            />
             {/* <Reviews /> */}
         </main>
     )
