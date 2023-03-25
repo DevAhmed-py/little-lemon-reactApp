@@ -4,23 +4,26 @@ import Reviews from "./Reviews";
 
 const TIMES = ['17:00','18:00','19:00','20:00','21:00','22:00']
 
+const initializeTimes = () => {
+    return TIMES
+}
+
+const updateTimes = (state, action) => {
+
+    return state
+}
+
 const Main = () => {
 
-    // const [state, dispatch] = useReducer( updateTimes, initializeTimes )
+    const [availableTimes, dispatch] = useReducer( updateTimes, initializeTimes())
 
-    const [availableTimes, setAvailableTimes] = useState(undefined)
+    // const [availableTimes, setAvailableTimes] = useState(undefined)
 
-    const handleSelectChange = (e) => {
-        setAvailableTimes(e.target.value)
+    const handleDateChange = (e) => {
+        // setAvailableTimes(e.target.value)
+
+        dispatch(TIMES)
     }
-
-    // const updateTimes = (state, action) => {
-
-    // }
-
-    // const initializeTimes = () => {
-        
-    // }
         
     return (
         <main>
@@ -54,7 +57,7 @@ const Main = () => {
                     <p>
                         Our Bruchetta is made from grilled bread that 
                         has been smeared from garllic and seasoned with 
-                        salt and olive oil.
+                        sea salt and olive oil.
                     </p>
                     <div className="order-delivery">
                         <p> Order a delivery </p>
@@ -79,8 +82,8 @@ const Main = () => {
             </section>
 
             <BookingForm 
-                times = {TIMES}
-                onChange = {handleSelectChange}
+                times = {availableTimes}
+                onChange = {handleDateChange}
             />
             {/* <Reviews /> */}
         </main>

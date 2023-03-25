@@ -4,6 +4,7 @@ const BookingForm = ({times, onChange}) => {
     const [date, setDate] = useState("")
     const [guests, setGuests] = useState("")
     const [occasion, setOccasion] = useState("")
+    const [selectedTime, setSelectedTime] = useState(undefined)
     
     // const formValid = () => {
     //     return (
@@ -46,11 +47,11 @@ const BookingForm = ({times, onChange}) => {
                 <label htmlFor="res-date"> Choose date </label>
                 <input className="formStyle" type="date" id="res-date" 
                     value= {date}
-                    onChange= {e => setDate(e.target.value)}
+                    onChange= {e => {setDate(e.target.value); onChange(e)}}
                 />
                 <label htmlFor="res-time"> Choose time </label>
                 <select className="formStyle" id="res-time " 
-                    onChange= {onChange}
+                    onChange= {e => setSelectedTime(e.target.value)}
                 >
                     {times.map(time => 
                         <option value={time} key={time}> 
