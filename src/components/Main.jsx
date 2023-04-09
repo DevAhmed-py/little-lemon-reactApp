@@ -1,8 +1,10 @@
-import React, {useReducer, useState} from "react";
+import React, {useEffect, useReducer, useState} from "react";
 import BookingForm from "./BookingForm";
 import Reviews from "./Reviews";
 
 const TIMES = ['17:00','18:00','19:00','20:00','21:00','22:00']
+
+const date = new Date().getDate()
 
 const initializeTimes = () => {
     return TIMES
@@ -16,6 +18,17 @@ const updateTimes = (state, action) => {
 const Main = () => {
 
     const [availableTimes, dispatch] = useReducer( updateTimes, initializeTimes())
+
+    const fetchData = () => {
+        fetch('https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/master/api.js')
+            .then(response => response.json())
+            .then(data => data)
+            .catch((error) => console.log(error)); 
+    }
+    
+    useEffect(() => {
+        fetchData();
+    }, [])
 
     // const [availableTimes, setAvailableTimes] = useState(undefined)
 
