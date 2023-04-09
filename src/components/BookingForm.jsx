@@ -35,7 +35,7 @@ const BookingForm = ({times, onChange}) => {
                 color: '#333'
             }}
             > Book a Table </h2>
-            <form onSubmit={handleSubmit}
+            <form onSubmit={submitHandler}
                 style= {{ display: 'grid', 
                 background: '#edefee', 
                 width: '400px', 
