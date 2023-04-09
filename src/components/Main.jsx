@@ -1,35 +1,43 @@
-import React, { useState } from "react";
+import React, {useEffect, useReducer, useState} from "react";
 import BookingForm from "./BookingForm";
 import Reviews from "./Reviews";
 
+const TIMES = ['17:00','18:00','19:00','20:00','21:00','22:00']
 
+const date = new Date().getDate()
 
+const initializeTimes = () => {
+    return TIMES
+}
+
+const updateTimes = (state, action) => {
+
+    return state
+}
 
 const Main = () => {
 
+    const [availableTimes, dispatch] = useReducer( updateTimes, initializeTimes())
 
-    
-    const [availableTimes, setAvailableTimes] = useState(['17:00','18:00','19:00','20:00','21:00','22:00']);
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        alert('Reservation made')
-        // clearField()
+    const fetchData = () => {
+        fetch('https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/master/api.js')
+            .then(response => response.json())
+            .then(data => data)
+            .catch((error) => console.log(error)); 
     }
-    // const formValid = () => {
-    //     return (
-    //         date && availableTimes && guests && occasion
-    //     );
-    // }
+    
+    useEffect(() => {
+        fetchData();
+    }, [])
 
-    // const clearField = () => {
-    //     setDate('');
-    //     setAvailableTimes('');
-    //     setGuests('');
-    //     setOccasion('');
-    // }
+    // const [availableTimes, setAvailableTimes] = useState(undefined)
 
+    const handleDateChange = (e) => {
+        // setAvailableTimes(e.target.value)
 
+        dispatch(TIMES)
+    }
+        
     return (
         <main>
             <div className="main-header">
@@ -88,7 +96,7 @@ const Main = () => {
 
             <BookingForm 
                 times = {availableTimes}
-                submitHandler = {handleSubmit}
+                onChange = {handleDateChange}
             />
             {/* <Reviews /> */}
         </main>

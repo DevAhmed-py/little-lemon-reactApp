@@ -1,23 +1,31 @@
 import React, { useState } from "react";
 
-
-
-const BookingForm = ({times, submitHandler}) => {
-
+const BookingForm = ({times, onChange}) => {
     const [date, setDate] = useState("")
     const [guests, setGuests] = useState("")
     const [occasion, setOccasion] = useState("")
-    const [selectedTime, setSelectedTime] = useState("")
+    const [selectedTime, setSelectedTime] = useState(undefined)
+    
+    // const formValid = () => {
+    //     return (
+    //         date && availableTimes && guests && occasion
+    //     );
+    // }
 
-
-    const handleSelectChange = (e) => {
-        setSelectedTime(e.target.value)
+    // const clearField = () => {
+    //     setDate('');
+    //     setAvailableTimes('');
+    //     setGuests('');
+    //     setOccasion('');
+    // }
+    
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        alert('Reservation made')
+        // clearField()
     }
 
-    
-
     return (
-
         <>
             <h2 style={{
                 fontFamily: 'Markazi Text, serif',
@@ -39,13 +47,17 @@ const BookingForm = ({times, submitHandler}) => {
                 <label htmlFor="res-date"> Choose date </label>
                 <input className="formStyle" type="date" id="res-date" 
                     value= {date}
-                    onChange= {e => setDate(e.target.value)}
+                    onChange= {e => {setDate(e.target.value); onChange(e)}}
                 />
                 <label htmlFor="res-time"> Choose time </label>
                 <select className="formStyle" id="res-time " 
-                    onChange= {handleSelectChange}
+                    onChange= {e => setSelectedTime(e.target.value)}
                 >
-                    {times && times.map(time => <option value={time} key={time}> {time} </option>)}
+                    {times.map(time => 
+                        <option value={time} key={time}> 
+                            {time} 
+                        </option>
+                    )}
                 </select>
                 <label htmlFor="guests"> Number of guests </label>
                 <input className="formStyle" type="number" placeholder="1" 
